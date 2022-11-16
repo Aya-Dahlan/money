@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         designSize: Size(414, 736),
         builder: (context, child) => MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: Transaction_12(),
+              home: Transaction_10(),
             ));
   }
 }

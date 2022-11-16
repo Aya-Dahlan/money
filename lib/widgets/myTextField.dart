@@ -6,7 +6,11 @@ class MyTextField extends StatelessWidget {
 
   double width;
   String hintText;
-  MyTextField({required this.hintText, this.width= 371});
+  Image? suff;
+  MyTextField(
+      {required this.hintText,
+        this.width= 371,
+        this.suff});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +19,10 @@ class MyTextField extends StatelessWidget {
       width: width.w?? 371.w,
       child: TextField(
 
+
         decoration: InputDecoration(
+
+          suffixIcon:suff,
             enabledBorder:UnderlineInputBorder(
               borderSide: BorderSide(
                color: Color(0xffDADADA),

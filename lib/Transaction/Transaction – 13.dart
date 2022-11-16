@@ -3,8 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/myTextField.dart';
 
-class Transaction_13 extends StatelessWidget {
+class Transaction_13 extends StatefulWidget {
   const Transaction_13({Key? key}) : super(key: key);
+
+  @override
+  State<Transaction_13> createState() => _Transaction_13State();
+}
+
+class _Transaction_13State extends State<Transaction_13> {
+  int selectedUp = 0;
+
+  int selectedDown = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,62 +46,92 @@ class Transaction_13 extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Container(
-                    width: 118.w,
-                    height: 41.h,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffFFFFFF),
-                          spreadRadius: 0.5,
-                          blurRadius: 6,
-                          offset: Offset(-3, -3), // changes position of shadow
-                        ),
-                      ],
+                  GestureDetector(
+                    child: Container(
+                      width: 118.w,
+                      height: 41.h,
+                      decoration: BoxDecoration(
+                        color: selectedUp == 0
+                            ? Color(0xffEAF3D9)
+                            : Colors.grey.shade300,
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xffFFFFFF),
+                            spreadRadius: 0.5,
+                            blurRadius: 6,
+                            offset:
+                                Offset(-3, -3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Center(child: Text("Income")),
                     ),
-                    child: Center(child: Text("Income")),
+                    onTap: () {
+                      setState(() {
+                        selectedUp = 0;
+                      });
+                    },
                   ),
                   SizedBox(
                     width: 12.w,
                   ),
-                  Container(
-                    width: 118.w,
-                    height: 41.h,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffFFFFFF),
-                          spreadRadius: 0.5,
-                          blurRadius: 6,
-                          offset: Offset(-3, -3), // changes position of shadow
-                        ),
-                      ],
+                  GestureDetector(
+                    child: Container(
+                      width: 118.w,
+                      height: 41.h,
+                      decoration: BoxDecoration(
+                        color: selectedUp == 1
+                            ? Color(0xffEAF3D9)
+                            : Colors.grey.shade300,
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xffFFFFFF),
+                            spreadRadius: 0.5,
+                            blurRadius: 6,
+                            offset:
+                                Offset(-3, -3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Center(child: Text("Expense")),
                     ),
-                    child: Center(child: Text("Expense")),
+                    onTap: () {
+                      setState(() {
+                        selectedUp = 1;
+                      });
+                    },
                   ),
                   SizedBox(
                     width: 12.w,
                   ),
-                  Container(
-                    width: 118.w,
-                    height: 41.h,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffFFFFFF),
-                          spreadRadius: 0.5,
-                          blurRadius: 6,
-                          offset: Offset(-3, -3), // changes position of shadow
-                        ),
-                      ],
+                  GestureDetector(
+                    child: Container(
+                      width: 118.w,
+                      height: 41.h,
+                      decoration: BoxDecoration(
+                        color: selectedUp == 2
+                            ? Color(0xffEAF3D9)
+                            : Colors.grey.shade300,
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xffFFFFFF),
+                            spreadRadius: 0.5,
+                            blurRadius: 6,
+                            offset:
+                                Offset(-3, -3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Center(child: Text("Transfer")),
                     ),
-                    child: Center(child: Text("Income")),
+                    onTap: () {
+                      setState(() {
+                        selectedUp = 2;
+                      });
+                    },
                   ),
                 ],
               ),
@@ -115,6 +160,7 @@ class Transaction_13 extends StatelessWidget {
                     MyTextField(
                       hintText: '22/09/2022(Thu) 20:48',
                       width: 337.w,
+                      suff: Image.asset('images/Group 185.png'),
                     ),
                     SizedBox(
                       height: 18.h,
@@ -188,7 +234,6 @@ class Transaction_13 extends StatelessWidget {
                 ),
               ),
             ),
-
             SizedBox(
               height: 46.h,
             ),
@@ -242,62 +287,92 @@ class Transaction_13 extends StatelessWidget {
               padding: EdgeInsets.only(left: 19.w),
               child: Row(
                 children: [
-                  Container(
-                    width: 115.w,
-                    height: 70.h,
-                    decoration: BoxDecoration(
-                      color: Color(0xffEBEFF3),
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffFFFFFF),
-                          spreadRadius: 0.5,
-                          blurRadius: 6,
-                          offset: Offset(-3, -3), // changes position of shadow
-                        ),
-                      ],
+                  GestureDetector(
+                    child: Container(
+                      width: 115.w,
+                      height: 70.h,
+                      decoration: BoxDecoration(
+                        color: selectedDown == 0
+                            ? Color(0xffEAF3D9)
+                            : Color(0xffEBEFF3),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xffFFFFFF),
+                            spreadRadius: 0.5,
+                            blurRadius: 6,
+                            offset:
+                                Offset(-3, -3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Center(child: Text("Accounts")),
                     ),
-                    child: Center(child: Text("Accounts")),
+                    onTap: () {
+                      setState(() {
+                        selectedDown = 0;
+                      });
+                    },
                   ),
                   SizedBox(
                     width: 14.w,
                   ),
-                  Container(
-                    width: 115.w,
-                    height: 70.h,
-                    decoration: BoxDecoration(
-                      color: Color(0xffEBEFF3),
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffFFFFFF),
-                          spreadRadius: 0.5,
-                          blurRadius: 6,
-                          offset: Offset(-3, -3), // changes position of shadow
-                        ),
-                      ],
+                  GestureDetector(
+                    child: Container(
+                      width: 115.w,
+                      height: 70.h,
+                      decoration: BoxDecoration(
+                        color: selectedDown == 1
+                            ? Color(0xffEAF3D9)
+                            : Color(0xffEBEFF3),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xffFFFFFF),
+                            spreadRadius: 0.5,
+                            blurRadius: 6,
+                            offset:
+                                Offset(-3, -3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Center(child: Text("Cash")),
                     ),
-                    child: Center(child: Text("Cash")),
+                    onTap: () {
+                      setState(() {
+                        selectedDown = 1;
+                      });
+                    },
                   ),
                   SizedBox(
                     width: 14.w,
                   ),
-                  Container(
-                    width: 115.w,
-                    height: 70.h,
-                    decoration: BoxDecoration(
-                      color: Color(0xffEBEFF3),
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xffFFFFFF),
-                          spreadRadius: 0.5,
-                          blurRadius: 6,
-                          offset: Offset(-3, -3), // changes position of shadow
-                        ),
-                      ],
+                  GestureDetector(
+                    child: Container(
+                      width: 115.w,
+                      height: 70.h,
+                      decoration: BoxDecoration(
+                        color: selectedDown == 2
+                            ? Color(0xffEAF3D9)
+                            : Color(0xffEBEFF3),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xffFFFFFF),
+                            spreadRadius: 0.5,
+                            blurRadius: 6,
+                            offset: Offset(-3, -3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: Center(child: Text("Card")),
                     ),
-                    child: Center(child: Text("Card")),
+                    onTap: (){
+                      setState(() {
+
+                        selectedDown=2;
+                      });
+                    },
                   ),
                   SizedBox(
                     width: 14.w,
