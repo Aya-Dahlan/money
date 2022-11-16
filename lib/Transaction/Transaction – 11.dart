@@ -15,15 +15,23 @@ class Transaction_11 extends StatelessWidget {
         elevation: 0,
         title: Row(
           children: [
+            
+            IconButton(onPressed: (){}, icon: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            )),
+
+            Text("Note"),
+            SizedBox(
+              width: 20.w,
+            ),
             IconButton(
                 onPressed: () {},
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
                 )),
-            SizedBox(
-              width: 20.w,
-            ),
+
             Text(
               "Sep 2022",
               style: TextStyle(
@@ -31,9 +39,7 @@ class Transaction_11 extends StatelessWidget {
                 fontSize: 18.sp,
               ),
             ),
-            SizedBox(
-              width: 20.w,
-            ),
+
             IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -41,12 +47,12 @@ class Transaction_11 extends StatelessWidget {
                   color: Colors.white,
                 )),
             SizedBox(
-              width: 105.w,
+              width: 35.w,
             ),
             IconButton(
                 onPressed: () {},
                 icon: Icon(
-                  Icons.close,
+                  Icons.settings_outlined,
                   color: Colors.white,
                 ))
           ],
